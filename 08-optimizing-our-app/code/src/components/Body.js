@@ -25,24 +25,62 @@ const Body = () => {
   }
 
   return (
-    <section className="container body">
-      <div className="flex-sbc filter-contianer">
-        <h2 className="no-restaurants">{allRestaurants.length} restaurants</h2>
-        <div className="filter-input">
-          <input
-            type="text"
-            placeholder="Restaurant name"
-            className="search-input"
-          />
-          <button className="search-btn">🔍</button>
+    <section>
+      <div className="banner">
+        <div className="container">
+          <div className="banner-container">
+            <img
+              className="banner-img"
+              src={
+                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep"
+              }
+              alt=""
+            />
+            <img
+              className="banner-img"
+              src={
+                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/qsgjyrelvjr3atzl0ypm"
+              }
+              alt=""
+            />
+            <img
+              className="banner-img"
+              src={
+                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
+              }
+              alt=""
+            />
+            <img
+              className="banner-img"
+              src={
+                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3"
+              }
+              alt=""
+            />
+          </div>
         </div>
-        <button className="rating-filter-btn">Rating</button>
       </div>
-      <hr />
-      <div className="card-container">
-        {allRestaurants.map((restaurant) => {
-          return <RestaurantCard key={restaurant.id} {...restaurant} />;
-        })}
+      <div className="container">
+        <div className="flex-sbc filter-container">
+          <h2 className="no-restaurants">
+            {allRestaurants.length} restaurants
+          </h2>
+          <div className="filter-input">
+            <input
+              type="text"
+              placeholder="Restaurant name"
+              className="search-input"
+            />
+            <button className="search-btn">🔍</button>
+          </div>
+          <button className="rating-filter-btn">Rating</button>
+        </div>
+        <hr />
+        <div className="card-container">
+          {allRestaurants.map((restaurant) => {
+            return <RestaurantCard key={restaurant.id} {...restaurant} />;
+          })}
+        </div>
       </div>
     </section>
   );
