@@ -12,6 +12,7 @@ img {
   object-fit: cover;
 }
 input {
+  display: inline-block;
   font: inherit;
   outline: none;
   padding-inline: 0.5rem;
@@ -91,9 +92,8 @@ ul {
 
 .banner {
   background-color: #171a29;
-  min-height: 290px;
   margin-bottom: 2rem;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 .banner-container {
   display: flex;
@@ -102,13 +102,13 @@ ul {
   margin-left: 1.5rem;
 }
 .banner-img {
-  height: 210px;
-  width: 210px;
+  height: 200px;
+  width: 200px;
   transition: all 0.5s;
 }
 .banner-img:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.04);
 }
 .filter-container {
   padding-bottom: 2rem;
@@ -120,20 +120,29 @@ ul {
 .filter-input {
   display: flex;
   align-items: center;
-}
-.search-input {
-  border-color: #dfdfdf;
+  background-color: #dfdfdf;
+  border: 2px solid #dfdfdf;
   border-radius: 16px;
 }
-.search-btn {
+.search-input {
   border: none;
+  padding: 0.3rem 0.7rem;
+  height: 2rem;
+  width: 19rem;
+  border-radius: 16px 0 0 16px;
+}
+.search-btn {
+  background-color: #dfdfdf;
+  padding: 0.3rem;
+  border-radius: 16px;
 }
 
 .rating-filter-btn {
   background-color: rgb(255, 242, 217);
   color: black;
+  font-size: 12px;
   border-radius: 16px;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.7rem;
 }
 .rating-filter-btn:hover {
   background-color: rgb(255, 167, 2);

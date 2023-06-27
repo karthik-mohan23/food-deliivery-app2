@@ -3,59 +3,54 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
+import {
+  API_LINK,
+  BANNER_IMAGE_1,
+  BANNER_IMAGE_2,
+  BANNER_IMAGE_3,
+  BANNER_IMAGE_4,
+} from "../utilities/links";
+
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
 
   async function fetchData() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.0260688&lng=76.3124753&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(API_LINK);
 
     const json = await data.json();
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    // console.log(json?.data?.cards[2]?.data?.data?.cards[0]?.data);
+    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
-  if (allRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return allRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <section>
       <div className="banner">
         <div className="container">
           <div className="banner-container">
             <img
               className="banner-img"
-              src={
-                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/pneknawbadtvceqzwiep"
-              }
-              alt=""
+              src={BANNER_IMAGE_1}
+              alt="banner image"
             />
             <img
               className="banner-img"
-              src={
-                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/qsgjyrelvjr3atzl0ypm"
-              }
-              alt=""
+              src={BANNER_IMAGE_2}
+              alt="banner image"
             />
+            <img className="banner-img" src={BANNER_IMAGE_3} alt="" />
             <img
               className="banner-img"
-              src={
-                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
-              }
-              alt=""
-            />
-            <img
-              className="banner-img"
-              src={
-                "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3"
-              }
-              alt=""
+              src={BANNER_IMAGE_4}
+              alt="banner image"
             />
           </div>
         </div>
@@ -63,21 +58,46 @@ const Body = () => {
       <div className="container">
         <div className="flex-sbc filter-container">
           <h2 className="no-restaurants">
-            {allRestaurants.length} restaurants
+            {filteredRestaurants.length} restaurants
           </h2>
           <div className="filter-input">
             <input
               type="text"
-              placeholder="Restaurant name"
+              placeholder="restaurant name"
               className="search-input"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
             />
-            <button className="search-btn">🔍</button>
+            <button
+              className="search-btn"
+              onClick={() => {
+                const searchedRestaurants = allRestaurants.filter(
+                  (restaurant) => {
+                    return restaurant?.data?.name
+                      .toLowerCase()
+                      .includes(searchText.toLowerCase());
+                  }
+                );
+                setSearchText("");
+                return setFilteredRestaurants(searchedRestaurants);
+              }}>
+              🔍
+            </button>
           </div>
-          <button className="rating-filter-btn">Rating</button>
+          <button
+            className="rating-filter-btn"
+            onClick={() => {
+              const filterRestaurants = allRestaurants.filter((restaurant) => {
+                return restaurant?.data?.avgRating > 4;
+              });
+              return setFilteredRestaurants(filterRestaurants);
+            }}>
+            Rating
+          </button>
         </div>
         <hr />
         <div className="card-container">
-          {allRestaurants.map((restaurant) => {
+          {filteredRestaurants.map((restaurant) => {
             return <RestaurantCard key={restaurant.id} {...restaurant} />;
           })}
         </div>

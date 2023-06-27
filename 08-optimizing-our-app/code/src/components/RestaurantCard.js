@@ -1,5 +1,6 @@
+import { RESTAURANT_CARD_IMG } from "../utilities/links";
+
 const RestaurantCard = (props) => {
-  console.log(props.data);
   const {
     cloudinaryImageId,
     name,
@@ -12,10 +13,7 @@ const RestaurantCard = (props) => {
     <div className="card">
       <div>
         <img
-          src={
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-            cloudinaryImageId
-          }
+          src={RESTAURANT_CARD_IMG + cloudinaryImageId}
           alt="restaurant image"
         />
       </div>
