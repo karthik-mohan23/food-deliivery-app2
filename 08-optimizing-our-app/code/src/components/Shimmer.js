@@ -2,10 +2,10 @@ import ShimmerCard from "./ShimmerCard";
 
 const Shimmer = () => {
   return (
-    <section className="container ">
+    <section>
       <div className="shimmer">
         <div className="shimmer-banner"></div>
-        <div className="card-container shimmer-grid">
+        <div className="card-container container shimmer-grid">
           {Array(16)
             .fill("")
             .map((e, index) => {
