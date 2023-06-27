@@ -163,9 +163,13 @@ ul {
 }
 /* shimmer */
 .shimmer {
-  margin-top: 5rem;
   min-height: 150vh;
-  padding-block: 1rem;
+}
+.shimmer-banner {
+  height: 250px;
+  background-color: rgb(227, 227, 227);
+}
+.shimmer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem 0.825rem;
