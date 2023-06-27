@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+input {
+  font: inherit;
+  outline: none;
+  padding-inline: 0.5rem;
+  font-size: 14px;
+  padding-block: 0.25rem;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+body {
+  color: #3d4152;
+  line-height: 1.2;
+  font-family: "Open Sans", sans-serif;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.flex-sbc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* navbar */
+header {
+  width: 100%;
+  font-size: 0.825rem;
+  padding-block: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.brand-logo {
+  width: 70px;
+}
+.location,
+.location-city {
+  font-size: 11px;
+}
+.location-city {
+  font-weight: 700;
+  color: #3d4152;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid black;
+}
+.location {
+  padding-left: 0.5rem;
+  color: #686b78;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+/* body */
+.body {
+  padding-block: 2rem;
+}
+.no-restaurants {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.filter-input {
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  border-color: #dfdfdf;
+  border-radius: 16px;
+}
+.search-btn {
+  border: none;
+}
+
+.filter-contianer {
+  padding-bottom: 1rem;
+}
+.rating-filter-btn {
+  background-color: orange;
+  color: black;
+  border-radius: 16px;
+  padding: 0.4rem 1rem;
+}
+.rating-filter-btn:hover {
+  background-color: rgb(255, 198, 91);
+}
+.card-container {
+  padding-block: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem 0.825rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.825rem;
+  width: 230px;
+  padding: 16px 12px;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+}
+.card:hover {
+  cursor: pointer;
+  border: 1px solid #cdcdd0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.res-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.res-cuisines {
+  color: #686b78;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #535665;
+}
+.res-rating-o {
+  padding: 3px 6px;
+  background-color: #ffa700;
+}
+.res-rating-g {
+  padding: 3px 6px;
+  background-color: #48c479;
+}
+/* shimmer */
+.shimmer {
+  margin-top: 5rem;
+  min-height: 150vh;
+  padding-block: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem 0.825rem;
+}
+.shimmer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 230px;
+  height: 200px;
+  padding: 16px 12px;
+  border: 1px solid #cdcdd0;
+}
+.sh-img-div {
+  background-color: rgb(204, 205, 205);
+  height: 120px;
+}
+.sh-name-div {
+  background-color: rgb(204, 205, 205);
+  height: 10px;
+  width: 70%;
+}
+.shim-text-div {
+  background-color: rgb(204, 205, 205);
+  height: 7px;
+  width: 40%;
+}
