@@ -34,10 +34,7 @@ const RestaurantInfo = () => {
 
   const { deliveryTime } = restaurantInfo?.cards[0]?.card?.card?.info?.sla;
 
-  //   console.log(
-  //     restaurantInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-  //       ?.card
-  //   );
+  console.log(restaurantInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
   const { title } =
     restaurantInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;

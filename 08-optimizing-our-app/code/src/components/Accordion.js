@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 const Accordion = ({ title, content }) => {
-  console.log(content);
   const [isActive, setIsActive] = useState(false);
 
   return (
     <div className="accordion-item">
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
-        <div>{title}</div>
+        <h2 className="accordion-category">
+          {title} ({content.length})
+        </h2>
         <div>{isActive ? "-" : "+"}</div>
       </div>
       {isActive && (
@@ -16,10 +17,12 @@ const Accordion = ({ title, content }) => {
             return (
               <>
                 <div key={menu.card.info.id} className="flex-sbc menu-items">
-                  <div>
-                    <h3>{menu.card.info.name}</h3>
-                    <p>{menu.card.info.price} / 100</p>
-                    <p>{menu.card.info.description}</p>
+                  <div className="menu-text">
+                    <h3 className="menu-res-name">{menu.card.info.name}</h3>
+                    <p className="menu-price">₹ {menu.card.info.price / 100}</p>
+                    <p className="menu-description">
+                      {menu.card.info.description}
+                    </p>
                   </div>
                   <div>
                     <div className="food-image">

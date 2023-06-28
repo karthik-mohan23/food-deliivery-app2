@@ -325,21 +325,17 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
-  /* background-color: #21aeca; */
-}
-
-.accordion-title:hover {
-  /* background-color: #3ab4cc; */
 }
 
 .accordion-title,
 .accordion-content {
   padding: 1rem;
 }
-
-.accordion-content {
-  /* background-color: #39b9d2; */
+.accordion-category {
+  font-size: 1rem;
+  font-weight: 900;
 }
+
 @media screen and (max-width: 700px) {
   .accordion {
     width: 90%;
@@ -347,7 +343,28 @@ ul {
 }
 .menu-items {
   padding-block: 2rem;
+  /* gap: 2rem; */
 }
+.menu-res-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3e4152;
+}
+.menu-price {
+  font-size: 0.825rem;
+}
+.menu-description {
+  font-size: 0.75rem;
+  color: rgba(40, 44, 63, 0.45);
+}
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 50%;
+}
+
 .food-image {
   width: 104px;
   height: 88px;
