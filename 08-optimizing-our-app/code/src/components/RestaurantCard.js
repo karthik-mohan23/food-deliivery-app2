@@ -21,7 +21,7 @@ const RestaurantCard = (props) => {
       <p className="res-cuisines">{cuisines.join(", ")}</p>
       <div className="card-flex">
         <p className={avgRating < 4 ? "res-rating-o" : "res-rating-g"}>
-          ★ {avgRating}
+          <span className="rating-bg-white">★ {avgRating}</span>
         </p>
         <div>•</div>
         <p>{slaString}</p>

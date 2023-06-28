@@ -19,9 +19,20 @@ input {
   font-size: 14px;
   padding-block: 0.25rem;
 }
-a {
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
   text-decoration: none;
+  outline: 0;
 }
+
+a {
+  color: inherit;
+  transition: 0.2s ease-in-out;
+}
+
 ul {
   list-style: none;
 }
@@ -48,7 +59,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+.hr-dotted {
+  margin-block: 1rem;
+  border-top: 1px dashed #cdcdd0;
+}
 /* navbar */
 header {
   width: 100%;
@@ -155,14 +169,14 @@ ul {
 .card-container {
   padding-block: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem 0.825rem;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 1.25rem 0.825rem;
 }
 .card {
   display: flex;
   flex-direction: column;
   gap: 0.825rem;
-  width: 230px;
+  width: 235px;
   padding: 16px 12px;
   border: 1px solid #fff;
   transition: all 0.3s;
@@ -195,6 +209,9 @@ ul {
 .res-rating-g {
   padding: 3px 6px;
   background-color: #48c479;
+}
+.rating-bg-white {
+  color: white;
 }
 /* shimmer */
 .shimmer {
@@ -232,3 +249,111 @@ ul {
   height: 7px;
   width: 40%;
 }
+/* Restaurant Info */
+.container-info {
+  padding-block: 3rem;
+  width: 95%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.res-info-name {
+  font-size: 1rem;
+}
+.res-info-cuisines,
+.res-info-area {
+  font-size: 0.6rem;
+}
+.res-info-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.res-info-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #cdcdd0;
+  padding: 0.5rem 0.25rem;
+  border-radius: 4px;
+}
+.res-info-rating {
+  color: rgb(7, 186, 7);
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dfdfdf;
+}
+.res-info-total-rating {
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: #8a8a8a;
+}
+.res-info-delivery-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.res-info-delivery-info > p {
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+.veg-only {
+  margin-block: 1rem;
+}
+.veg-only-btn {
+  background-color: rgb(226, 255, 198);
+  color: black;
+  font-size: 10px;
+  border-radius: 16px;
+  padding: 0.3rem 0.7rem;
+}
+
+.veg-only-btn:hover {
+  background-color: lawngreen;
+}
+/* accordion */
+/* .accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+} */
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  /* background-color: #21aeca; */
+}
+
+.accordion-title:hover {
+  /* background-color: #3ab4cc; */
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+.accordion-content {
+  /* background-color: #39b9d2; */
+}
+@media screen and (max-width: 700px) {
+  .accordion {
+    width: 90%;
+  }
+}
+.menu-items {
+  padding-block: 2rem;
+}
+.food-image {
+  width: 104px;
+  height: 88px;
+  border-radius: 0.5rem;
+}
+.hr-menu {
+  border-top: 1px solid #cdcdd0;
+}
+/* end of accordion */

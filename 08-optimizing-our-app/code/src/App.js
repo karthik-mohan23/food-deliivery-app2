@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
 import Header from "./components/Header";
 import Body from "./components/Body";
-
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import Offer from "./components/Offer";
 import Help from "./components/Help";
+import RestaurantInfo from "./components/RestaurantInfo";
 
 const App = () => {
   return (
@@ -34,6 +35,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/help",
         element: <Help />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantInfo />,
       },
     ],
   },
