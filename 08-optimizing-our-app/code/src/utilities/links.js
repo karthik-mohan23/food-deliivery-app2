@@ -14,5 +14,5 @@ export const BANNER_IMAGE_3 =
 export const BANNER_IMAGE_4 =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3";
 
-export const RESTAURANT_INFO =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.0260688&lng=76.3124753&restaurantId=65996&submitAction=ENTER";
+export const MENU_API =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=10.0260688&lng=76.3124753&restaurantId=";

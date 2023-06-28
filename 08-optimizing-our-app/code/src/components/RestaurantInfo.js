@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
-import { RESTAURANT_INFO } from "../utilities/links";
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utilities/links";
 import Shimmer from "./Shimmer";
 import Accordion from "./Accordion";
 
 const RestaurantInfo = () => {
   const [restaurantInfo, setRestaurantInfo] = useState(null);
 
+  const { resId } = useParams();
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(RESTAURANT_INFO);
+    const data = await fetch(MENU_API + resId);
+
     const json = await data.json();
-    // console.log(json?.data?.cards[0]?.card?.card?.info);
-    // console.log(
-    //   json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-    //     ?.card?.title
-    // );
     setRestaurantInfo(json?.data);
   };
 
@@ -34,7 +33,6 @@ const RestaurantInfo = () => {
 
   const { deliveryTime } = restaurantInfo?.cards[0]?.card?.card?.info?.sla;
 
-  //   console.log(restaurantInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
   const { title } =
     restaurantInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card;
